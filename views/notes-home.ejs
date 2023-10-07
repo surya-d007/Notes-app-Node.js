@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <h2>Your Notes</h2>
+    <ul>
+        <% for (const note of notes) { %>
+            <li><h3><%= note.content %></h3></li>
+        <% } %>
+    </ul>
+    <form action="/notes-home" method="post">
+        <textarea name="content" rows="4" cols="50" placeholder="Add a new note"></textarea>
+        <input type="hidden" name="email" value="<%= email %>">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
