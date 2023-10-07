@@ -5,11 +5,10 @@ const app = express();
 
 app.use(express.static(__dirname + '/views/styles'));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist/css')) ;
-
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-const SampleModel = require('./models/schema');
-const NoteModel = require('./models/noteschema');
+const SampleModel = require(__dirname + '/models/schema');
+const NoteModel = require(__dirname + '/models/noteschema');
 
 // Connect to your MongoDB server with the 'notes' database
 mongoose.connect('mongodb+srv://surya-007:abcd1234@cluster0.e95bgae.mongodb.net/notes', { useNewUrlParser: true });
@@ -145,10 +144,9 @@ app.get('/notes-home', async (req, res) => {
 
   
 
-
-
-
-
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
+
+const PORT = process.env.PORT || 5001
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
