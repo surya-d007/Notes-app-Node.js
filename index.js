@@ -49,13 +49,43 @@ app.post('/login', async (req, res) => {
       req.session.email = email;
       res.redirect('/notes-home');
     } else {
-      res.redirect('/register');
+      // Check if the user exists with the given email
+      const userWithEmail = await SampleModel.findOne({ email });
+      if (userWithEmail) {
+        // User with the provided email exists, but the password is incorrect
+        //res.render('login', { message: 'Wrong password' });
+        res.status(500).send("Wrong password");
+      } else {
+        // No user found with the provided email
+        res.redirect('/register');
+      }
     }
   } catch (err) {
     console.log(err);
     res.status(500).send("Error during login.");
   }
 });
+
+
+
+
+
+// app.post('/login', async (req, res) => {
+//   try {
+//     const { email, password } = req.body;
+//     const user = await SampleModel.findOne({ email, password });
+
+//     if (user) {
+//       req.session.email = email;
+//       res.redirect('/notes-home');
+//     } else {
+//       res.redirect('/register');
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).send("Error during login.");
+//   }
+// });
 
 app.get('/register', (req, res) => {
   res.sendFile(__dirname + '/views/register.html');
@@ -144,9 +174,6 @@ app.get('/notes-home', async (req, res) => {
 
   
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
 
-const PORT = process.env.PORT || 5001
+const PORT = process.env.PORT || 80;
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
