@@ -1,0 +1,3 @@
+mongodb+srv://surya-007:abcd1234@cluster0.e95bgae.mongodb.net/notes
+
+

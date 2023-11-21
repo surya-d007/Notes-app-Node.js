@@ -10,8 +10,14 @@ app.set('views', __dirname + '/views');
 const SampleModel = require(__dirname + '/models/schema');
 const NoteModel = require(__dirname + '/models/noteschema');
 
+
+require('dotenv').config();
+
+const secretMongoKey = process.env.MONGO_DB;
+
+
 // Connect to your MongoDB server with the 'notes' database
-mongoose.connect('mongodb+srv://surya-007:abcd1234@cluster0.e95bgae.mongodb.net/notes', { useNewUrlParser: true });
+mongoose.connect( secretMongoKey, { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on("connected", () => {
@@ -32,6 +38,7 @@ app.use(
 
 app.use(express.urlencoded({ extended: true }));
 
+
 app.get('/', (req, res) => {
   res.redirect('/login');
 });
@@ -39,6 +46,7 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(__dirname + '/views/login.html');
 });
+
 
 app.post('/login', async (req, res) => {
   try {
