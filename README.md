@@ -19,7 +19,7 @@ The Notes Application is a web-based platform that allows users to create accoun
 ## Setup Instructions
 1. **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/surya-d007/Notes-app-Node.js.git
     ```
 
 2. **Install dependencies:**
