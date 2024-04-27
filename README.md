@@ -1,13 +1,13 @@
 # Notes Application
 
 ## Description
-The Notes Application is a web-based platform that allows users to create accounts, log in, and create and save notes. Users can securely store their credentials using MongoDB, and their saved notes will be associated with their profiles, ensuring easy access every time they log in.
+The Notes Application is a web-based platform that allows users to create accounts, log in, and create and save notes. User credentials and saved notes are securely stored in MongoDB, ensuring persistent storage and easy access for users.
 
 ## Features
-- User Authentication: Users can create accounts and log in securely.
-- Notes Creation: Users can create and save notes in the form of text.
-- MongoDB Integration: User credentials and saved notes are stored in a MongoDB database.
-- Persistent Storage: Saved notes are associated with user profiles and fetched from the database upon login.
+- User Authentication: Create accounts, log in securely.
+- Notes Creation: Create and save notes.
+- MongoDB Integration: Store user credentials and notes.
+- Persistent Storage: Retrieve saved notes upon login.
 
 ## Technologies Used
 - **Frontend:** HTML, CSS, JavaScript
@@ -15,6 +15,12 @@ The Notes Application is a web-based platform that allows users to create accoun
 - **Database:** MongoDB
 - **Authentication:** bcrypt.js, JSON Web Tokens (JWT)
 - **ORM/ODM:** Mongoose
+
+## API Endpoints
+- **POST /login**: Authenticate and log in user.
+- **POST /register**: Register a new user account.
+- **GET /notes-home**: Render user's saved notes.
+- **POST /notes-home**: Save a new note for the user.
 
 ## Setup Instructions
 1. **Clone the repository:**
