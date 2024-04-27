@@ -31,6 +31,7 @@ The Notes Application is a web-based platform that allows users to create accoun
 2. **Install dependencies:**
     ```bash
     cd notes-application
+    cd server
     npm install
     ```
 
