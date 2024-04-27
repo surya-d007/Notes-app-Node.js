@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+      .login-card{
+            width: 400px;
+            height: 450px;
+        }
+        body {
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,233,228,0.31858864151129207) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="p-5 ">
+      <div class="container text-center border shadow-lg rounded-4 login-card p-5 bg-white align-self-center ">
+        <h5 class="pb-4">Register Your account . It seems like you have your account registered already</h2>
+          <form action="/register" method="post">
+
+              <div class="form-floating mb-3">
+                  <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+              </div>
+              <button type="submit" class="btn-login btn btn-secondary my-4">Register</button>
+          </form> 
+          <p>Already have an account? <a href="/login">Login</a></p>
+      </div>
+  </div>
+</body>
+</html>
