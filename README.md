@@ -29,12 +29,11 @@ The Notes Application is a web-based platform that allows users to create accoun
     ```
 
 3. **Configure environment variables:**
-    - Create a `.env` file in the root directory.
+    - Create a `.env` file in the server directory.
     - Add the following variables:
         ```plaintext
         PORT=3000
-        MONGODB_URI=<your-mongodb-uri>
-        JWT_SECRET=<your-secret-key>
+        MONGO_DB=<your-mongodb-uri>
         ```
 
 4. **Start the server:**
